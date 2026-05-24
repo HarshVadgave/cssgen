@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern CSS UI Generator – Glassmorphism & Neumorphism CSS Tool</title>
+  <meta name="description" content="Free online Glassmorphism and Neumorphism CSS generator. Create stunning modern UI components with live preview and copy-ready CSS code instantly." />
+  <meta name="keywords" content="glassmorphism generator, neumorphism generator, CSS generator, modern UI generator, CSS card generator, glass effect CSS, soft UI generator, frosted glass CSS" />
+  <!-- Open Graph -->
+  <meta property="og:title" content="Modern CSS UI Generator – Glassmorphism & Neumorphism" />
+  <meta property="og:description" content="Create beautiful Glassmorphism and Neumorphism components with live preview and copy-ready CSS." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://modern-css-ui-generator.dev" />
+  <meta property="og:image" content="https://modern-css-ui-generator.dev/og-image.png" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Modern CSS UI Generator" />
+  <meta name="twitter:description" content="Live CSS generator for Glassmorphism and Neumorphism UI components." />
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ======================== NAVBAR ======================== -->
+  <nav class="navbar" id="navbar" role="navigation" aria-label="Main Navigation">
+    <div class="nav-logo">⬡ CSSGen</div>
+    <div class="nav-right">
+      <button class="theme-toggle" id="theme-toggle" title="Toggle light/dark mode" aria-label="Toggle theme">🌙</button>
+      <button class="nav-btn" onclick="document.getElementById('generator').scrollIntoView({behavior:'smooth'})">Open Generator</button>
+    </div>
+  </nav>
+
+  <!-- ======================== HERO ======================== -->
+  <section class="hero" role="banner">
+    <div class="hero-bg" aria-hidden="true">
+      <div class="blob blob1"></div>
+      <div class="blob blob2"></div>
+      <div class="blob blob3"></div>
+    </div>
+    <div class="hero-badge">Free CSS Generator Tool</div>
+    <h1>Modern CSS<br/><span>UI Generator</span></h1>
+    <p class="hero-sub">
+      Create beautiful <strong>Glassmorphism</strong> and <strong>Neumorphism</strong>
+      components with live preview and copy-ready CSS code.
+    </p>
+    <div class="hero-ctas">
+      <button class="btn-primary" onclick="document.getElementById('generator').scrollIntoView({behavior:'smooth'})">
+        ✦ Start Designing
+      </button>
+      <button class="btn-secondary" id="hero-copy-example">
+        ⎘ Copy Example CSS
+      </button>
+    </div>
+    <div class="hero-stats">
+      <div class="stat"><div class="stat-num">2</div><div class="stat-label">Design Modes</div></div>
+      <div class="stat"><div class="stat-num">9+</div><div class="stat-label">CSS Controls</div></div>
+      <div class="stat"><div class="stat-num">∞</div><div class="stat-label">Combinations</div></div>
+      <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Free to Use</div></div>
+    </div>
+  </section>
+
+  <!-- ======================== GENERATOR ======================== -->
+  <section class="section" id="generator" aria-label="CSS Generator">
+    <div class="container">
+      <p class="section-label reveal">Generator</p>
+      <h2 class="section-title reveal">Design Your Component</h2>
+      <p class="section-sub reveal">Tweak sliders, see changes instantly, then grab your CSS.</p>
+
+      <!-- TABS -->
+      <div class="tabs-wrap reveal">
+        <div class="tabs" role="tablist">
+          <button class="tab-btn active" id="tab-glass" role="tab" aria-selected="true" aria-controls="panel-glass" onclick="switchTab('glass')">
+            ◈ Glassmorphism
+          </button>
+          <button class="tab-btn" id="tab-neu" role="tab" aria-selected="false" aria-controls="panel-neu" onclick="switchTab('neu')">
+            ◉ Neumorphism
+          </button>
+        </div>
+      </div>
+
+      <!-- GENERATOR GRID -->
+      <div class="gen-grid">
+
+        <!-- ===== CONTROLS PANEL ===== -->
+        <aside class="controls-panel reveal" aria-label="Style Controls">
+
+          <!-- GLASSMORPHISM CONTROLS -->
+          <div id="panel-glass">
+            <h3>⬡ Glassmorphism Controls</h3>
+
+            <div class="control-group">
+              <div class="control-label">Background Color</div>
+              <div class="color-row">
+                <div class="color-picker-wrap"><input type="color" id="g-bg-color" value="#1a1a2e" title="Background Color"/></div>
+                <input type="text" class="color-hex" id="g-bg-color-hex" value="#1a1a2e" maxlength="7"/>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <div class="control-label">Card Color</div>
+              <div class="color-row">
+                <div class="color-picker-wrap"><input type="color" id="g-card-color" value="#ffffff" title="Card Color"/></div>
+                <input type="text" class="color-hex" id="g-card-color-hex" value="#ffffff" maxlength="7"/>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <div class="control-label">Opacity <span class="control-val" id="g-opacity-val">18%</span></div>
+              <input type="range" id="g-opacity" min="5" max="60" value="18"/>
+            </div>
+
+            <div class="control-group">
+              <div class="control-label">Blur <span class="control-val" id="g-blur-val">16px</span></div>
+              <input type="range" id="g-blur" min="2" max="40" value="16"/>
+            </div>
+
+            <div class="control-group">
+              <div class="control-label">Border Radius <span class="control-val" id="g-radius-val">20px</span></div>
+              <input type="range" id="g-radius" min="0" max="48" value="20"/>
+            </div>
+
+            <div class="control-group">
+              <div class="control-label">Border Opacity <span class="control-val" id="g-border-val">30%</span></div>
+              <input type="range" id="g-border" min="0" max="100" value="30"/>
+            </div>
+
+            <div class="control-group">
+              <div class="control-label">Shadow Intensity <span class="control-val" id="g-shadow-val">20%</span></div>
+              <input type="range" id="g-shadow" min="0" max="60" value="20"/>
+            </div>
+
+            <div class="control-group">
+              <div class="control-label">Width <span class="control-val" id="g-width-val">280px</span></div>
+              <input type="range" id="g-width" min="180" max="400" value="280"/>
+            </div>
+
+            <div class="control-group">
+              <div class="control-label">Height <span class="control-val" id="g-height-val">Auto</span></div>
+              <input type="range" id="g-height" min="0" max="400" value="0"/>
+            </div>
+
+            <div class="action-btns">
+              <button class="action-btn" onclick="randomize()">🎲 Random</button>
+              <button class="action-btn" onclick="resetControls()">↺ Reset</button>
+              <button class="action-btn export" onclick="exportHTML()">⬇ Export as HTML + CSS</button>
+            </div>
+          </div>
+
+          <!-- NEUMORPHISM CONTROLS -->
+          <div id="panel-neu" style="display:none">
+            <h3>◉ Neumorphism Controls</h3>
+
+            <div class="control-group">
+              <div class="control-label">Background Color</div>
+              <div class="color-row">
+                <div class="color-picker-wrap"><input type="color" id="n-bg-color" value="#e0e5ec" title="Background Color"/></div>
+                <input type="text" class="color-hex" id="n-bg-color-hex" value="#e0e5ec" maxlength="7"/>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <div class="control-label">Element Color</div>
+              <div class="color-row">
+                <div class="color-picker-wrap"><input type="color" id="n-el-color" value="#e0e5ec" title="Element Color"/></div>
+                <input type="text" class="color-hex" id="n-el-color-hex" value="#e0e5ec" maxlength="7"/>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <div class="control-label">Border Radius <span class="control-val" id="n-radius-val">20px</span></div>
+              <input type="range" id="n-radius" min="0" max="60" value="20"/>
+            </div>
+
+            <div class="control-group">
+              <div class="control-label">Shadow Distance <span class="control-val" id="n-dist-val">8px</span></div>
+              <input type="range" id="n-dist" min="1" max="30" value="8"/>
+            </div>
+
+            <div class="control-group">
+              <div class="control-label">Shadow Blur <span class="control-val" id="n-blur-val">16px</span></div>
+              <input type="range" id="n-blur" min="2" max="50" value="16"/>
+            </div>
+
+            <div class="control-group">
+              <div class="control-label">Shadow Intensity <span class="control-val" id="n-intensity-val">25%</span></div>
+              <input type="range" id="n-intensity" min="5" max="60" value="25"/>
+            </div>
+
+            <div class="control-group">
+              <div class="toggle-row">
+                <span class="toggle-label">Inset Shadow</span>
+                <label class="toggle" aria-label="Toggle inset shadow">
+                  <input type="checkbox" id="n-inset"/>
+                  <div class="toggle-slider"></div>
+                </label>
+              </div>
+            </div>
+
+            <div class="control-group">
+              <div class="control-label">Width <span class="control-val" id="n-width-val">280px</span></div>
+              <input type="range" id="n-width" min="180" max="400" value="280"/>
+            </div>
+
+            <div class="control-group">
+              <div class="control-label">Height <span class="control-val" id="n-height-val">Auto</span></div>
+              <input type="range" id="n-height" min="0" max="400" value="0"/>
+            </div>
+
+            <div class="action-btns">
+              <button class="action-btn" onclick="randomize()">🎲 Random</button>
+              <button class="action-btn" onclick="resetControls()">↺ Reset</button>
+              <button class="action-btn export" onclick="exportHTML()">⬇ Export as HTML + CSS</button>
+            </div>
+          </div>
+        </aside>
+
+        <!-- ===== RIGHT COLUMN: PREVIEW + CODE ===== -->
+        <div class="preview-code-col">
+
+          <!-- LIVE PREVIEW -->
+          <div class="preview-area reveal" aria-label="Live Preview">
+            <div class="preview-bg" id="preview-bg">
+              <div class="preview-blob pb1" aria-hidden="true"></div>
+              <div class="preview-blob pb2" aria-hidden="true"></div>
+              <div class="preview-blob pb3" aria-hidden="true"></div>
+            </div>
+
+            <!-- The live card -->
+            <div id="live-card">
+              <div class="card-icon" aria-hidden="true">✦</div>
+              <div class="card-title">Designed with CSS</div>
+              <p class="card-body">A beautiful component generated live. Adjust the sliders to see real-time updates and craft your perfect style.</p>
+              <button class="card-btn">Explore More →</button>
+            </div>
+          </div>
+
+          <!-- CSS CODE PANEL -->
+          <div class="code-panel reveal" aria-label="Generated CSS Code">
+            <div class="code-header">
+              <div class="code-header-left">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <span style="margin-left:0.4rem">generated.css</span>
+              </div>
+              <button class="copy-btn" id="copy-css-btn" onclick="copyCSSCode()" aria-label="Copy CSS to clipboard">
+                <span id="copy-icon">⎘</span>
+                <span id="copy-text">Copy CSS</span>
+              </button>
+            </div>
+            <pre id="css-output" aria-live="polite" aria-label="CSS code output"></pre>
+          </div>
+
+        </div><!-- end right col -->
+      </div><!-- end gen-grid -->
+    </div>
+  </section>
+
+  <!-- ======================== FAQ ======================== -->
+  <section class="faq-section" id="faq" aria-label="Frequently Asked Questions">
+    <div class="container">
+      <p class="section-label reveal">Got Questions?</p>
+      <h2 class="section-title reveal">Frequently Asked Questions</h2>
+      <p class="section-sub reveal">Everything you need to know about the tool and the design techniques.</p>
+
+      <div class="faq-grid" role="list">
+
+        <article class="faq-item reveal" role="listitem" itemscope itemtype="https://schema.org/Question">
+          <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
+            <span itemprop="name">What is Glassmorphism?</span>
+            <span class="faq-arrow" aria-hidden="true">▾</span>
+          </button>
+          <div class="faq-a" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
+            <span itemprop="text">Glassmorphism is a modern UI design trend that uses a frosted-glass effect achieved with CSS backdrop-filter, semi-transparent backgrounds, and subtle borders. It creates a sense of depth and layering, giving interfaces a sleek, futuristic look that became popular around 2020–2021 and continues to be widely used in dashboards, cards, and modals.</span>
+          </div>
+        </article>
+
+        <article class="faq-item reveal" role="listitem" itemscope itemtype="https://schema.org/Question">
+          <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
+            <span itemprop="name">What is Neumorphism?</span>
+            <span class="faq-arrow" aria-hidden="true">▾</span>
+          </button>
+          <div class="faq-a" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
+            <span itemprop="text">Neumorphism (also called Soft UI) is a design style that simulates extruded plastic or soft clay-like elements using carefully crafted box shadows — a light shadow on one side and a dark shadow on the other — applied to a background of the same color as the element. The result is a tactile, raised or sunken appearance without actual 3D rendering.</span>
+          </div>
+        </article>
+
+        <article class="faq-item reveal" role="listitem" itemscope itemtype="https://schema.org/Question">
+          <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
+            <span itemprop="name">Can I copy the generated CSS?</span>
+            <span class="faq-arrow" aria-hidden="true">▾</span>
+          </button>
+          <div class="faq-a" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
+            <span itemprop="text">Yes! Every change you make is instantly reflected in the CSS code panel. Simply click the "Copy CSS" button to copy the complete, ready-to-use CSS to your clipboard. You can then paste it directly into your project's stylesheet. No sign-up or account is required.</span>
+          </div>
+        </article>
+
+        <article class="faq-item reveal" role="listitem" itemscope itemtype="https://schema.org/Question">
+          <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
+            <span itemprop="name">Is this tool free to use?</span>
+            <span class="faq-arrow" aria-hidden="true">▾</span>
+          </button>
+          <div class="faq-a" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
+            <span itemprop="text">Absolutely. Modern CSS UI Generator is 100% free with no hidden costs, no paywalls, and no account needed. It runs entirely in your browser, meaning no data is sent to any server. You can use it as many times as you like for personal and commercial projects.</span>
+          </div>
+        </article>
+
+        <article class="faq-item reveal" role="listitem" itemscope itemtype="https://schema.org/Question">
+          <button class="faq-q" onclick="toggleFAQ(this)" aria-expanded="false">
+            <span itemprop="name">Can I use this CSS in my projects?</span>
+            <span class="faq-arrow" aria-hidden="true">▾</span>
+          </button>
+          <div class="faq-a" itemscope itemtype="https://schema.org/Answer" itemprop="acceptedAnswer">
+            <span itemprop="text">Yes, completely. All CSS generated by this tool is yours to use in any personal or commercial project without attribution. The generated code is pure, clean CSS with no dependencies, making it easy to drop into any web framework — React, Vue, Angular, plain HTML, WordPress, you name it.</span>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================== FOOTER ======================== -->
+  <footer role="contentinfo">
+    <p>Built with ♥ using vanilla HTML, CSS & JS &nbsp;·&nbsp; <span>Modern CSS UI Generator</span> &nbsp;·&nbsp; Free &amp; Open for all developers</p>
+  </footer>
+
+ <script src="script.js"></script>
+</body>
+</html>
